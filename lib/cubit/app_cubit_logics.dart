@@ -15,7 +15,15 @@ class _AppCubitLogicsState extends State<AppCubitLogics> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body:
-            BlocBuilder<AppCubits, CubitStates>(builder: (context, state) {}));
+      body: BlocBuilder<AppCubits, CubitStates>(
+        builder: (context, state) {
+          if (state is WelcomeState) {
+            return WelcomePage();
+          } else {
+            return Container();
+          }
+        },
+      ),
+    );
   }
 }

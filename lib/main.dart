@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_cubit/cubit/app_cubit_logics.dart';
 import 'package:flutter_cubit/misc/pages/detail_page.dart';
 import 'package:flutter_cubit/misc/pages/navpages/main_page.dart';
 import 'package:flutter_cubit/misc/pages/welcome-page.dart';
@@ -24,6 +25,7 @@ class MyApp extends StatelessWidget {
       ),
       home: BlocProvider(
         create: (context) => AppCubits(),
+        child: AppCubitLogics(),
       ),
     );
   }
