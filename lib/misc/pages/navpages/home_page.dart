@@ -81,17 +81,23 @@ class _HomePageState extends State<HomePage> with TickerProviderStateMixin {
                                 return Padding(
                                   padding:
                                       const EdgeInsets.only(right: 20, top: 10),
-                                  child: Container(
-                                    width: 180,
-                                    height: 180,
-                                    decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(20),
-                                      image: DecorationImage(
-                                          image: NetworkImage(
-                                            "http://mark.bslmeiyu.com/uploads/" +
-                                                info[index].img,
-                                          ),
-                                          fit: BoxFit.cover),
+                                  child: GestureDetector(
+                                    onTap: () {
+                                      BlocProvider.of<AppCubits>(context)
+                                          .detailPage(info[index]);
+                                    },
+                                    child: Container(
+                                      width: 180,
+                                      height: 180,
+                                      decoration: BoxDecoration(
+                                        borderRadius: BorderRadius.circular(20),
+                                        image: DecorationImage(
+                                            image: NetworkImage(
+                                              "http://mark.bslmeiyu.com/uploads/" +
+                                                  info[index].img,
+                                            ),
+                                            fit: BoxFit.cover),
+                                      ),
                                     ),
                                   ),
                                 );
